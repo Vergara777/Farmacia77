@@ -203,12 +203,21 @@ include_once 'Layouts/nav.php';
                                         <div class="text-center">
                                             <img src="../img/avatar5.png" class="profile-user-img img-fluid rounded-circle" alt="User Image">
                                         </div>
-                                        <ul class="list-group list-group-flush mt-3 mb-3">
-                                            <li class="list-group-item"><b>Nombre:</b> Nombre</li>
-                                            <li class="list-group-item"><b>Apellidos:</b> Apellidos</li>
-                                            <li class="list-group-item"><b>Edad:</b> 12</li>
-                                            <li class="list-group-item"><b>DNI:</b> 777</li>
-                                            <li class="list-group-item"><b>Tipo de Usuario:</b> Administrador</li>
+                                        <input id = "id_usuario" type = "hidden" value = "<?php echo $_SESSION['usuario']; ?>">
+                                        <h3 id = "nombre_us" class="profile-username text-center text-success">Nombre</h3>
+                                        <p id = "apellidos_us" class="text-muted text-center">Apellido</p>
+                                        <ul class="list-group list-group-unbordered mb-3">
+                                            <li class="list-group-item">
+                                                <a style="color:black">Edad:</a><a class="float-right">18</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b style="color:black">DNI:</b><a class="float-right">777</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b style="color:black">Tipo de Usuario:</b>
+                                                <span class="float-right" style="background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Administrador</span>
+                                            </li>
+
                                         </ul>
                                     </div>
                                     <div class="card bg-success">

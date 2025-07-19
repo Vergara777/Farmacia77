@@ -45,19 +45,19 @@ if (isset($_POST['dni']) && isset($_POST['pass'])) {
                     header("Location: ../vista/tec_catalogo.php");
                     break;
                 default:
-                    header("Location: ../vista/index.php");
+                    header("Location: ..index.php");
                     break;
             }
             exit();
         } else {
             // Si no se encontró usuario, redirigir al login
-            header("Location: ../vista/index.php?error=1");
+            header("Location: ../index.php");
             exit();
         }
     }
 } else {
     // Si no se enviaron datos POST, redirigir al login
-    header("Location: ../vista/index.php");
+    header("Location: ../index.php");
     exit();
 }
 ?>
