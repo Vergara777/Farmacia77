@@ -1,6 +1,9 @@
 
 <!--end::App Wrapper-->
 <!--begin::Script-->
+<!--begin::jQuery-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<!--end::jQuery-->
 <!--begin::Third Party Plugin(OverlayScrollbars)-->
 <script
     src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"

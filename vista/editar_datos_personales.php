@@ -205,17 +205,17 @@ include_once 'Layouts/nav.php';
                                         </div>
                                         <input id = "id_usuario" type = "hidden" value = "<?php echo $_SESSION['usuario']; ?>">
                                         <h3 id = "nombre_us" class="profile-username text-center text-success">Nombre</h3>
-                                        <p id = "apellidos_us" class="text-muted text-center">Apellido</p>
+                                        <p id = "apellidos_us" class="text-muted text-center">Apellidos</p>
                                         <ul class="list-group list-group-unbordered mb-3">
                                             <li class="list-group-item">
-                                                <a style="color:black">Edad:</a><a class="float-right">18</a>
+                                                <a style="color:black">Edad:</a><a id = "edad" class="float-right">18</a>
                                             </li>
                                             <li class="list-group-item">
-                                                <b style="color:black">DNI:</b><a class="float-right">777</a>
+                                                <b style="color:black">DNI:</b><a id = "dni_us" class="float-right">777</a>
                                             </li>
                                             <li class="list-group-item">
                                                 <b style="color:black">Tipo de Usuario:</b>
-                                                <span class="float-right" style="background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Administrador</span>
+                                                <span id = "tipo_us" class="float-right" style="background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Administrador</span>
                                             </li>
 
                                         </ul>
@@ -226,15 +226,15 @@ include_once 'Layouts/nav.php';
                                         </div>
                                         <div class="card-body" style="color:black;">
                                             <strong><i class="fas fa-phone mr-1" style="color:rgb(11, 11, 11);"></i> Teléfono</strong>
-                                            <p class="text-muted">+56 987654321</p>
+                                            <p id = "telefono_us" class="text-muted">+56 987654321</p>
                                             <strong><i class="fas fa-map-marker-alt mr-1"></i> Residencia</strong>
-                                            <p class="text-muted">Calle 123, 123456 Ciudad, Estado</p>
+                                            <p id = "residencia_us" class="text-muted">Calle 123, 123456 Ciudad, Estado</p>
                                             <strong><i class="fas fa-venus-mars mr-1"></i> Sexo</strong>
-                                            <p class="text-muted">Masculino</p>
+                                            <p id = "sexo_us" class="text-muted">Masculino</p>
                                             <strong><i class="fas fa-envelope mr-1"></i> Correo</strong>
-                                            <p class="text-muted">correo@correo.com</p>
+                                            <p id = "correo_us" class="text-muted">correo@correo.com</p>
                                             <strong><i class="fas fa-info-circle mr-1"></i> Información Adicional</strong>
-                                            <p class="text-muted">Información Adicional</p>
+                                            <p id = "adicional_us" class="text-muted">Información Adicional</p>
                                             <div class="text-center">
                                                 <button class="btn btn-primary">Editar</button>
                                             </div>
@@ -311,6 +311,9 @@ include_once 'Layouts/nav.php';
 } else {
     header('Location: ../index.php');
     exit();
-                            }
-                            ?>
+}
+?>
+<script src="../js/usuario.js"></script>
+
+
 

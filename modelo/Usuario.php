@@ -17,5 +17,13 @@ class Usuario{
         return $this->objetos;
     }
 
+    function obtener_datos($id){
+        $sql = "SELECT * FROM usuario INNER JOIN tipo_us ON us_tipo = id_tipo_us and id_usuario = :id";
+        $query = $this->acceso->prepare($sql);
+        $query->execute(array(':id' => $id));
+        $this->objetos = $query->fetchAll();
+        // Devolver los datos en formato JSON para el controlador
+        echo json_encode($this->objetos);
+    }
 }
 ?>
