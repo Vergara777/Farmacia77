@@ -116,7 +116,7 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
                 <a href="../vista/adm_catalogo.php" class="brand-link">
                     <!--begin::Brand Image-->
                     <img
-                            src="../img/Gemini_Generated_Image_n7i5t9n7i5t9n7i5.png"
+                            src="../img/doctor.png"
                             alt="AdminLTE Logo"
                             class="brand-image opacity-75 shadow"
                     />
