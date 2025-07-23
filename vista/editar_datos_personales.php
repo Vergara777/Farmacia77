@@ -215,7 +215,7 @@ include_once 'Layouts/nav.php';
                                             </li>
                                             <li class="list-group-item">
                                                 <b style="color:black">Tipo de Usuario:</b>
-                                                <span id = "tipo_us" class="float-right" style="background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Administrador</span>
+                                                <span id = "us_tipo" class="float-right" style="background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Administrador</span>
                                             </li>
 
                                         </ul>
