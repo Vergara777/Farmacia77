@@ -32,6 +32,7 @@ $(document).ready(function() {
         $('#adicional_us').html('');
       }
     });
+   
   }
 
 
