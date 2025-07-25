@@ -22,8 +22,6 @@ class Usuario{
         $query = $this->acceso->prepare($sql);
         $query->execute(array(':id' => $id));
         $this->objetos = $query->fetchAll();
-        // Devolver los datos en formato JSON para el controlador
-        echo json_encode($this->objetos);
     }
 }
 ?>
