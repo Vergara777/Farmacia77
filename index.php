@@ -72,4 +72,4 @@ if (!empty($_SESSION['us_tipo'])) {
 <script src ="js/login.js"></script>
 <footer>
     <p>© 2025 Farmasys. Tu salud es nuestra responsabilidad</p>
-</html>
+</html> 
