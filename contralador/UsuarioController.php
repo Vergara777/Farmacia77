@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include_once '../modelo/Usuario.php';
 $usuario = new Usuario();
+
 if($_POST['funcion'] == 'buscar_usuario'){
     $json = array();
     $usuario -> obtener_datos($_POST['datos']);
@@ -29,5 +30,30 @@ if($_POST['funcion'] == 'buscar_usuario'){
         echo json_encode(null);
     }
 
+} else if($_POST['funcion'] == 'capturar_datos') {
+    try {
+        $id_usuario = $_POST['id_usuario'];
+        $usuario->obtener_datos($id_usuario);
+        
+        if (!empty($usuario->objetos)) {
+            $datos = array(
+             /*   'nombre' => $usuario->objetos[0]->nombre_us,
+                'apellidos' => $usuario->objetos[0]->apellidos_us,
+                'dni' => $usuario->objetos[0]->dni_us,
+                'edad' => $usuario->objetos[0]->edad,   */
+                'residencia' => $usuario->objetos[0]->residencia_us,
+                'sexo' => $usuario->objetos[0]->sexo_us,
+                'correo' => $usuario->objetos[0]->correo_us,
+                'telefono' => $usuario->objetos[0]->telefono_us,
+                'adicional' => $usuario->objetos[0]->adicional_us
+            );
+            echo json_encode($datos);
+        } else {
+            echo json_encode(['error' => 'No se encontraron datos del usuario']);
+        }
+    } catch(Exception $e) {
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()]);
+    }
 }
 ?>

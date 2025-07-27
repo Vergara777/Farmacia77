@@ -79,7 +79,7 @@ include_once 'Layouts/nav.php';
                             />
                             <p>
                                 Luis Vergara - Web Developer
-                                <small>Julio 15-2025</small>
+                                <small>Agosto 12-2007</small>
                             </p>
                         </li>
                         <!--end::User Image-->
@@ -148,12 +148,12 @@ include_once 'Layouts/nav.php';
                     <li class="nav-item">
 
                     </li>
-                    <li class="nav-header">EXAMPLES</li>
+                    <li class="nav-header">Saitama</li>
                     <li class="nav-item">
                         <a href="../gallery.html" class="nav-link" >
                             <i class="nav-icon fas fa-image"></i>
                             <p>
-                                Gallery
+                                Muy pronto 
                             </p>
                         </a>
                     </li>
