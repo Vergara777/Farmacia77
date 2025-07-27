@@ -51,12 +51,7 @@ form{
 .contendor-login img{
     height: 100px;
 }
-.contendor-login h2{ //Titulo
-    margin: 15px 0;
-    color: black;
-    text-transform: uppercase; // Mayusculas
-    font-size: 2.3rem;
-}
+
 .contendor-login .input-div{
     position: relative;
     display: grid;

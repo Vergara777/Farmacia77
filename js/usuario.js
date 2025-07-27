@@ -2,6 +2,7 @@ $(document).ready(function() {
     console.log('JS cargado');
     var funcion = '';
   var id_usuario = $("#id_usuario").val();
+  var edit = false;
   console.log("ID usuario:", id_usuario);
   buscar_usuario(id_usuario);
   function buscar_usuario(Datos) {
@@ -19,21 +20,17 @@ $(document).ready(function() {
         $('#correo_us').html(response.correo || '');
         $('#telefono_us').html(response.telefono || '');
         $('#adicional_us').html(response.adicional || '');
-      } else {
-        $('#nombre_us').html('No encontrado');
-        $('#apellidos_us').html('');
-        $('#dni_us').html('');
-        $('#us_tipo').html('');
-        $('#edad').html('');
-        $('#residencia_us').html('');
-        $('#sexo_us').html('');
-        $('#correo_us').html('');
-        $('#telefono_us').html('');
-        $('#adicional_us').html('');
-      }
-    });
-   
-  }
+      
+    }
+    $(document).on('click', '.edit', (e) => {
+      funcion = 'capturar_datos';
+      edit = true;
+      $.post('../contralador/UsuarioController.php', {datos: Datos, funcion, id_usuario}, (response) => {
+        console.log(response);
 
+  });
+  });
 
+});
+}
 });

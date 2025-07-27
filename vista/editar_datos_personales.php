@@ -236,7 +236,7 @@ include_once 'Layouts/nav.php';
                                             <strong><i class="fas fa-info-circle mr-1"></i> Información Adicional</strong>
                                             <p id = "adicional_us" class="text-muted">Información Adicional</p>
                                             <div class="text-center">
-                                                <button class="btn btn-primary">Editar</button>
+                                                <button class="edit btn btn-primary">Editar</button>
                                             </div>
                                         </div>
                                         <div class="card-footer">

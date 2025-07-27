@@ -28,5 +28,6 @@ if($_POST['funcion'] == 'buscar_usuario'){
     } else {
         echo json_encode(null);
     }
+
 }
 ?>
