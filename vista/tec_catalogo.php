@@ -11,7 +11,7 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 2) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Panel Técnico - Farmasys</title>
+    <title>Panel Técnico - Farma Conecta</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/css/all.min.css">
 </head>

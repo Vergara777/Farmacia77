@@ -54,7 +54,7 @@ include_once 'Layouts/nav.php';
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <img
-                            src="../img/avatar5.png"
+                            src="../img/robert.jpg"
                             class="user-image rounded-circle shadow"
                             alt="User Image"
                         />
@@ -73,12 +73,12 @@ include_once 'Layouts/nav.php';
                         <!--begin::User Image-->
                         <li class="user-header text-bg-primary">
                             <img
-                                src="../img/avatar5.png"
+                                src="../img/robert.jpg"
                                 class="rounded-circle shadow"
                                 alt="User Image"
                             />
                             <p>
-                                Luis Vergara - Web Developer
+                                Luis Vergara - Estudiante del Sena
                                 <small>Agosto 12-2007</small>
                             </p>
                         </li>
@@ -126,7 +126,7 @@ include_once 'Layouts/nav.php';
                 />
                 <!--end::Brand Image-->
                 <!--begin::Brand Text-->
-                <span class="brand-text fw-light">Farmasys</span>
+                <span class="brand-text fw-light">Farma Conecta</span>
                 <!--end::Brand Text-->
             </a>
             <!--end::Brand Link-->
@@ -153,7 +153,7 @@ include_once 'Layouts/nav.php';
                         <a href="../gallery.html" class="nav-link" >
                             <i class="nav-icon fas fa-image"></i>
                             <p>
-                                Muy pronto 
+                                Muy pronto, solo en cine está version
                             </p>
                         </a>
                     </li>
@@ -201,7 +201,7 @@ include_once 'Layouts/nav.php';
                                 <div class="card card-success card-outline">
                                     <div class="card-body box-profile">
                                         <div class="text-center">
-                                            <img src="../img/avatar5.png" class="profile-user-img img-fluid rounded-circle" alt="User Image">
+                                            <img src="../img/robert.jpg" class="profile-user-img img-fluid rounded-circle" alt="User Image">
                                         </div>
                                         <input id = "id_usuario" type = "hidden" value = "<?php echo $_SESSION['usuario']; ?>">
                                         <h3 id = "nombre_us" class="profile-username text-center text-success">Nombre</h3>
@@ -215,7 +215,7 @@ include_once 'Layouts/nav.php';
                                             </li>
                                             <li class="list-group-item">
                                                 <b style="color:black">Tipo de Usuario:</b>
-                                                <span id = "us_tipo" class="float-right" style="background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Administrador</span>
+                                                <span id = "us_tipo" class="float-right" style="background-color:rgb(255, 0, 21); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">Administrador</span>
                                             </li>
 
                                         </ul>
@@ -294,7 +294,7 @@ include_once 'Layouts/nav.php';
                                             </div>
                                         </form>
                                         <div class = "card-footer">
-                                            <p class="text-muted">Cuidado con ingresar datos incorrectos..</p>
+                                            <p class="text-muted">Tenga cuidado con ingresar datos incorrectos..</p>
                                         </div>
                                         </form>
                                        

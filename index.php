@@ -41,7 +41,7 @@ if (!empty($_SESSION['us_tipo'])) {
             <form action="contralador/LoginControllers.php" method="POST">
 
                 <img src="img/doctor.png" alt="">
-                <h2>Farmasys</h2>
+                <h2>Farma Conecta</h2>
                 <?php if (isset($_GET['error']) && $_GET['error'] == 1): ?>
                     <div style="color: red; text-align: center; margin-bottom: 10px;">
                         Usuario o contraseña incorrectos
@@ -65,13 +65,13 @@ if (!empty($_SESSION['us_tipo'])) {
                         <input type="password" name="pass" class="input" required>
                     </div>
                 </div>
-                <a href="">Create Warpiece</a>
+                <a href="">Crear Cuenta</a>
                 <input type="submit" class="btn" value="Iniciar Sesión">
             </form>
         </div>
 </body>
 <script src="js/login.js"></script>
 <footer>
-    <p>© 2025 Farmasys. Tu salud es nuestra responsabilidad, brrrrr</p>
+    <p>© 2025 Farma Conecta. Tu salud es nuestra responsabilidad</p>
 
 </html>

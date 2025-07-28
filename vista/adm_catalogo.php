@@ -52,7 +52,7 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
                     <li class="nav-item dropdown user-menu">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img
-                                    src="../img/avatar5.png"
+                                    src="../img/robert.jpg"
                                     class="user-image rounded-circle shadow"
                                     alt="User Image"
                             />
@@ -71,13 +71,13 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
                             <!--begin::User Image-->
                             <li class="user-header text-bg-primary">
                                 <img
-                                        src="../img/avatar5.png"
+                                        src="../img/robert.jpg"
                                         class="rounded-circle shadow"
                                         alt="User Image"
                                 />
                                 <p>
-                                    Luis Vergara - Web Developer
-                                    <small>Julio 15-2025</small>
+                                    Luis Vergara - Estudiante del Sena.
+                                    <small>Julio 12-2007</small>
                                 </p>
                             </li>
                             <!--end::User Image-->
@@ -122,7 +122,7 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
                     />
                     <!--end::Brand Image-->
                     <!--begin::Brand Text-->
-                    <span class="brand-text fw-light">Farmasys</span>
+                    <span class="brand-text fw-light">Farma Conecta</span>
                     <!--end::Brand Text-->
                 </a>
                 <!--end::Brand Link-->
