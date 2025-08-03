@@ -8,6 +8,13 @@ session_start();
 if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
 include_once 'Layouts/header.php';
 ?>
+<head>
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
+    
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
 <body class="layout-fixed">
 <title> Administrador | Editar Datos</title>
 <?php
@@ -98,7 +105,7 @@ include_once 'Layouts/nav.php';
                         <!--begin::Menu Footer-->
                         <li class="user-footer">
                             <a href="#" class="btn btn-default btn-flat">Profile</a>
-                            <a href="../contralador/logout.php" class="btn btn-default btn-flat float-end">Sign out</a>
+                            <a href="../contralador/logout.php" class="btn btn-default btn-flat float-end">Cerrar Sesión</a>
                         </li>
                         <!--end::Menu Footer-->
                     </ul>
@@ -252,7 +259,7 @@ include_once 'Layouts/nav.php';
                                         <h3 class="card-title text-success">Datos Personales</h3>
                                     </div>
                                     <div class="card-body">
-                                        <form class = "form form-horizontal">
+                                        <form id  = "form-usuario" class = "form form-horizontal">
                                             <div class="form-group row mb-3">
                                                 <label for="Telefono" class="col-sm-2 col-form-label">Teléfono</label>
                                                 <div class="col-sm-10">
@@ -289,7 +296,8 @@ include_once 'Layouts/nav.php';
                                             </div>
                                             <div class= "form-group row mb-3">
                                                 <div class="offset-sm-2 col-sm-10 float-right">
-                                                    <button class="btn btn-block btn-outline-success">Guardar</button>
+                                                <button class="btn btn-block btn-outline-success">Guardar</button>
+                                                <button type="reset" class="btn btn-block btn-outline-danger">Cancelar</button>
                                                 </div>
                                             </div>
                                         </form>

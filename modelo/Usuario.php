@@ -23,5 +23,41 @@ class Usuario{
         $query->execute(array(':id' => $id));
         $this->objetos = $query->fetchAll();
     }
+    function editar($id_usuario, $telefono, $residencia, $sexo, $adicional, $correo) {
+        try {
+            $sql = "UPDATE usuario SET 
+                    telefono_us = :telefono,
+                    residencia_us = :residencia,
+                    sexo_us = :sexo,
+                    adicional_us = :adicional,
+                    correo_us = :correo
+                    WHERE id_usuario = :id_usuario";
+            
+            $query = $this->acceso->prepare($sql);
+            $query->bindParam(':telefono', $telefono, PDO::PARAM_STR);
+            $query->bindParam(':residencia', $residencia, PDO::PARAM_STR);
+            $query->bindParam(':sexo', $sexo, PDO::PARAM_STR);
+            $query->bindParam(':adicional', $adicional, PDO::PARAM_STR);
+            $query->bindParam(':correo', $correo, PDO::PARAM_STR);
+            $query->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
+            
+            // Ejecutar la consulta y verificar el resultado
+            if($query->execute()) {
+                if($query->rowCount() > 0) {
+                    return true;
+                } else {
+                    error_log("No se modificaron filas. ID Usuario: $id_usuario");
+                    return "No se encontró el usuario o los datos son idénticos";
+                }
+            } else {
+                $error = $query->errorInfo();
+                error_log("Error SQL: " . print_r($error, true));
+                return "Error en la consulta: " . $error[2];
+            }
+        } catch(PDOException $e) {
+            error_log("PDOException: " . $e->getMessage());
+            return "Error de base de datos: " . $e->getMessage();
+        }
+    }
 }
 ?>

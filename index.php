@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicio de Sesión</title>
+    <title>Inicio de Sesión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@ if (!empty($_SESSION['us_tipo'])) {
             <form action="contralador/LoginControllers.php" method="POST">
 
                 <img src="img/doctor.png" alt="">
-                <h2>Farma Conecta</h2>
+                <h2>Farmasys</h2>
                 <?php if (isset($_GET['error']) && $_GET['error'] == 1): ?>
                     <div style="color: red; text-align: center; margin-bottom: 10px;">
                         Usuario o contraseña incorrectos
@@ -67,11 +67,12 @@ if (!empty($_SESSION['us_tipo'])) {
                 </div>
                 <a href="">Crear Cuenta</a>
                 <input type="submit" class="btn" value="Iniciar Sesión">
+
             </form>
         </div>
 </body>
 <script src="js/login.js"></script>
 <footer>
-    <p>© 2025 Farma Conecta. Tu salud es nuestra responsabilidad</p>
+    <p>© 2025 Farmasys. Tu salud es nuestra responsabilidad</p>
 
 </html>

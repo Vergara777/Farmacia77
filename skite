@@ -1,0 +1,86 @@
+[33mcommit 2aad0aab2c502d39e95266703ff290175d208fdf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Luis <vergaraoluise@gmail.com>
+Date:   Mon Jul 28 08:27:14 2025 -0500
+
+    Modificación de nombre de la Farmacia, y cambio de imagenes.
+
+[33mcommit c06f4350248b279f31401fda6f953d159a9e0afd[m
+Author: Luis <vergaraoluise@gmail.com>
+Date:   Mon Jul 28 07:38:02 2025 -0500
+
+    brrr
+
+[33mcommit a507878d7bc481b7328766b44febecf4ecc6aaa4[m
+Author: Luis <vergaraoluise@gmail.com>
+Date:   Sun Jul 27 18:14:51 2025 -0500
+
+    Cambios ahora al editar, un poco abanzados ya terminando la parte de editar datos personales.
+
+[33mcommit 6d3ca75acbd5ba137026df9be7cb3d397a6ce71f[m
+Author: Luis <vergaraoluise@gmail.com>
+Date:   Sun Jul 27 01:55:15 2025 -0500
+
+    Cambios regulares...
+
+[33mcommit 706f04491a02ba2e614c5b33ad0c2cacb84d89bd[m
+Author: Luis <vergaraoluise@gmail.com>
+Date:   Sat Jul 26 21:23:17 2025 -0500
+
+    Ah
+
+[33mcommit 8464e1a404b03b33dd23685423f107f3ee61d8f8[m
+Merge: 20eb288 cd47939
+Author: Luis <vergaraoluise@gmail.com>
+Date:   Fri Jul 25 16:20:23 2025 -0500
+
+    Merge pull request #1 from Vergara777/elias
+    
+    Cambios De Elias
+
+[33mcommit cd479391457df9c76f1c2f3918cff15f359945c6[m[33m ([m[1;31morigin/elias[m[33m)[m
+Author: sevilla2411 <146143402+elias2003s@users.noreply.github.com>
+Date:   Fri Jul 25 16:01:28 2025 -0500
+
+    Cambios De Elias
+
+[33mcommit 20eb2883f4e40d563ddeffda6b6ad2901aa50352[m
+Author: Luis <vergaraoluise@gmail.com>
+Date:   Fri Jul 25 14:39:26 2025 -0500
+
+    Error Corregido, no recibia datos
+
+[33mcommit 9250fd610ac8a3d23ade75385fddcbcf5367257b[m
+Author: Luis <vergaraoluise@gmail.com>
+Date:   Thu Jul 24 23:02:22 2025 -0500
+
+    Un poco avanzadoo, se agrego para que se muestren los datos del usuario
+
+[33mcommit 03056cc42d96316b24391cebc33a4957eab3c43a[m
+Author: Luis <vergaraoluis777@gmail.com>
+Date:   Tue Jul 22 19:44:07 2025 -0500
+
+    Cambios pocos, aun no arranco bien
+
+[33mcommit ccbfea36aba346edbb438cdab0512ca252b7bc4f[m
+Author: Luis <vergaraoluis777@gmail.com>
+Date:   Sun Jul 20 22:44:31 2025 -0500
+
+    nuevos cambios pocos pero nuevos
+
+[33mcommit 2be36bd893200c17306d3e00189b0849dce70cfb[m
+Author: Luis <vergaraoluis777@gmail.com>
+Date:   Sun Jul 20 22:29:09 2025 -0500
+
+    nuevos cambios pocos pero nuevos
+
+[33mcommit e784da7ada6928340d9af3750439fa5449369dfe[m
+Author: Luis <vergaraoluis777@gmail.com>
+Date:   Fri Jul 18 22:57:04 2025 -0500
+
+    Nuevos cambios pocos pero nuevos
+
+[33mcommit 03c4cc69cee2b9d04d7d319dcb77106109c3acf9[m
+Author: Luis <vergaraoluis777@gmail.com>
+Date:   Fri Jul 18 12:09:14 2025 -0500
+
+    Primer commit: Inicio de mi Proyecto de Farmacia

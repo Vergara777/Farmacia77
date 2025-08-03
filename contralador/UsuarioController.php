@@ -55,5 +55,49 @@ if($_POST['funcion'] == 'buscar_usuario'){
         http_response_code(500);
         echo json_encode(['error' => $e->getMessage()]);
     }
+}else if($_POST['funcion'] == 'editar_usuario') {
+    $id_usuario = $_POST['id_usuario'];
+    $telefono = $_POST['telefono'];
+    $residencia = $_POST['residencia'];
+    $sexo = $_POST['sexo'];
+    $adicional = $_POST['adicional'];
+    $correo = $_POST['correo'];
+    
+    try {
+        // Agregar logging para debug
+        error_log("Intentando editar usuario: " . $id_usuario);
+        
+        $resultado = $usuario->editar($id_usuario, $telefono, $residencia, $sexo, $adicional, $correo);
+        
+        if($resultado === true) {
+            echo json_encode([
+                'status' => 'success', 
+                'message' => 'editado',
+                'data' => [
+                    'id_usuario' => $id_usuario,
+                    'telefono' => $telefono,
+                    'residencia' => $residencia,
+                    'sexo' => $sexo,
+                    'correo' => $correo,
+                    'adicional' => $adicional
+                ]
+            ]);
+        } else {
+            error_log("Error al editar usuario: " . print_r($resultado, true));
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'No se pudo editar',
+                'debug' => $resultado
+            ]);
+        }
+    } catch(Exception $e) {
+        error_log("Excepción al editar usuario: " . $e->getMessage());
+        http_response_code(500);
+        echo json_encode([
+            'status' => 'error', 
+            'message' => $e->getMessage(),
+            'trace' => $e->getTraceAsString()
+        ]);
+    }
 }
 ?>

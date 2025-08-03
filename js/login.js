@@ -10,6 +10,18 @@ function remc1() {
         parent.classList.remove("focus");
     }
 }
+// mensaje de error si pone contraseña incorrecta
+function error() {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Contraseña incorrecta',
+        confirmButtonColor: '#28a745',
+        timer: 1500
+    });
+}
+
+
 
 inputs.forEach(input => {
     input.addEventListener("focus", addc1);

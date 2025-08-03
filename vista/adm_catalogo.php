@@ -122,7 +122,7 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
                     />
                     <!--end::Brand Image-->
                     <!--begin::Brand Text-->
-                    <span class="brand-text fw-light">Farma Conecta</span>
+                    <span class="brand-text fw-light">Farmasys</span>
                     <!--end::Brand Text-->
                 </a>
                 <!--end::Brand Link-->
