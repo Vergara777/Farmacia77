@@ -6,7 +6,24 @@ error_reporting(E_ALL);
 session_start();
 // Verificar si hay sesión activa y si es administrador
 if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
-    include_once 'Layouts/header.php';
+
+// Obtener la imagen de perfil y datos del usuario actual
+include_once '../modelo/Usuario.php';
+$usuario = new Usuario();
+$usuario->obtener_datos($_SESSION['usuario']);
+$imagen_perfil = '../img/robert.jpg'; // Default
+$nombre_completo = 'Usuario';
+$tipo_usuario = 'Usuario';
+
+if (!empty($usuario->objetos)) {
+    if ($usuario->objetos[0]->imagen_perfil) {
+        $imagen_perfil = $usuario->objetos[0]->imagen_perfil;
+    }
+    $nombre_completo = $usuario->objetos[0]->nombre_us . ' ' . $usuario->objetos[0]->apellidos_us;
+    $tipo_usuario = $usuario->objetos[0]->nombre_tipo ?? 'Usuario';
+}
+
+include_once 'Layouts/header.php';
 ?>
     <title> Administrador | Catálogo</title>
     <?php
@@ -52,7 +69,7 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
                     <li class="nav-item dropdown user-menu">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img
-                                    src="../img/robert.jpg"
+                                    src="<?php echo htmlspecialchars($imagen_perfil); ?>"
                                     class="user-image rounded-circle shadow"
                                     alt="User Image"
                             />
@@ -71,13 +88,13 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
                             <!--begin::User Image-->
                             <li class="user-header text-bg-primary">
                                 <img
-                                        src="../img/robert.jpg"
+                                        src="<?php echo htmlspecialchars($imagen_perfil); ?>"
                                         class="rounded-circle shadow"
                                         alt="User Image"
                                 />
                                 <p>
-                                    Luis Vergara - Estudiante del Sena.
-                                    <small>Julio 12-2007</small>
+                                    <?php echo htmlspecialchars($nombre_completo); ?> - <?php echo htmlspecialchars($tipo_usuario); ?>
+                                    <small><?php echo date('F d, Y'); ?></small>
                                 </p>
                             </li>
                             <!--end::User Image-->

@@ -203,6 +203,106 @@ a.hover{
             font-size: 2rem;
         }
     }
+    
+    /* Estilos para funcionalidad de imagen de perfil */
+    .cambiar-imagen-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .cambiar-imagen-btn:hover {
+        background-color: #218838 !important;
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    
+    .cambiar-imagen-btn i {
+        font-size: 14px;
+    }
+    
+    .profile-user-img {
+        transition: all 0.3s ease;
+    }
+    
+    .profile-user-img:hover {
+        transform: scale(1.05);
+    }
+    
+    #preview-imagen {
+        transition: all 0.3s ease;
+        border: 3px solid #28a745;
+    }
+    
+    #preview-imagen:hover {
+        transform: scale(1.05);
+        border-color: #218838;
+    }
+    
+    /* Estilos para el input de archivo personalizado */
+    .custom-file {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .form-control[type="file"] {
+        border: 2px dashed #28a745;
+        padding: 20px;
+        text-align: center;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control[type="file"]:hover {
+        border-color: #218838;
+        background-color: #e9ecef;
+    }
+    
+    .form-control[type="file"]:focus {
+        border-color: #218838;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    }
+    
+    /* Animación para el modal */
+    .modal.fade .modal-dialog {
+        transition: transform 0.3s ease-out;
+        transform: translate(0, -50px);
+    }
+    
+    .modal.show .modal-dialog {
+        transform: none;
+    }
+    
+    /* Mejoras para los info-box */
+    .info-box {
+        transition: all 0.3s ease;
+    }
+    
+    .info-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .info-box-icon {
+        transition: all 0.3s ease;
+    }
+    
+    .info-box:hover .info-box-icon {
+        transform: scale(1.1);
+    }
+    
+    /* Estilos para alertas mejoradas */
+    .alert-info {
+        border-left: 4px solid #17a2b8;
+        background-color: #d1ecf1;
+        border-color: #bee5eb;
+    }
     /*celulares*/
     @media screen and (max-width: 900px) {
         .contenedor {
@@ -222,6 +322,256 @@ a.hover{
         }
     }
 }
+/* Estilos para banners de bienvenida */
+.welcome-banner {
+    background: linear-gradient(135deg, rgba(38, 245, 79, 0.1), rgba(22, 219, 245, 0.1));
+    border: 1px solid rgba(38, 245, 79, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
 
+.welcome-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
 
+.welcome-banner:hover::before {
+    left: 100%;
+}
 
+.welcome-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.welcome-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.welcome-title {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-title i {
+    color: #28a745;
+    font-size: 1.5rem;
+}
+
+.welcome-subtitle {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin: 5px 0 15px 0;
+    font-weight: 400;
+}
+
+.welcome-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.info-card {
+    background: rgba(255,255,255,0.7);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(40, 167, 69, 0.2);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: #28a745;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.info-card h4 {
+    color: #2c3e50;
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.info-card p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.user-welcome {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.5);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #28a745;
+    object-fit: cover;
+}
+
+.user-details h3 {
+    color: #2c3e50;
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.user-details p {
+    color: #6c757d;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.role-admin {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+}
+
+.role-tech {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: white;
+}
+
+.current-time {
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* Responsive para banners */
+@media screen and (max-width: 768px) {
+    .welcome-banner {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .welcome-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .welcome-title {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+    
+    .welcome-info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .user-welcome {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .user-avatar {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Estilos específicos para página técnica */
+.tech-container {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.tech-container header {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.tech-container h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.logout-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.tech-content {
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+}

@@ -33,6 +33,7 @@ if (!empty($_SESSION['us_tipo'])) {
 ?>
 
 <body>
+    <img class = "wave" src = "img/wave.png" alt="">
     <div class="contenedor">
         <div class="img">
             <img src="img/undraw_medicine_hqqg.svg" alt="">

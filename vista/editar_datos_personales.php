@@ -6,6 +6,16 @@ error_reporting(E_ALL);
 session_start();
 // Verificar si hay sesión activa y si es administrador
 if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
+
+// Obtener la imagen de perfil del usuario actual
+include_once '../modelo/Usuario.php';
+$usuario = new Usuario();
+$usuario->obtener_datos($_SESSION['usuario']);
+$imagen_perfil = '../img/robert.jpg'; // Default
+if (!empty($usuario->objetos) && $usuario->objetos[0]->imagen_perfil) {
+    $imagen_perfil = $usuario->objetos[0]->imagen_perfil;
+}
+
 include_once 'Layouts/header.php';
 ?>
 <head>
@@ -61,7 +71,7 @@ include_once 'Layouts/nav.php';
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <img
-                            src="../img/robert.jpg"
+                            src="<?php echo htmlspecialchars($imagen_perfil); ?>"
                             class="user-image rounded-circle shadow"
                             alt="User Image"
                         />
@@ -80,7 +90,7 @@ include_once 'Layouts/nav.php';
                         <!--begin::User Image-->
                         <li class="user-header text-bg-primary">
                             <img
-                                src="../img/robert.jpg"
+                                src="<?php echo htmlspecialchars($imagen_perfil); ?>"
                                 class="rounded-circle shadow"
                                 alt="User Image"
                             />
@@ -207,8 +217,13 @@ include_once 'Layouts/nav.php';
                             <div class="col-md-4">
                                 <div class="card card-success card-outline">
                                     <div class="card-body box-profile">
-                                        <div class="text-center">
-                                            <img src="../img/robert.jpg" class="profile-user-img img-fluid rounded-circle" alt="User Image">
+                                        <div class="text-center position-relative">
+                                            <img id="imagen-perfil" src="<?php echo htmlspecialchars($imagen_perfil); ?>" class="profile-user-img img-fluid rounded-circle" alt="User Image">
+                                            <button type="button" class="btn btn-sm btn-success position-absolute cambiar-imagen-btn"
+                                                    style="bottom: 0; right: calc(50% - 60px); border-radius: 50%;"
+                                                    title="Cambiar imagen">
+                                                <i class="fas fa-camera"></i>
+                                            </button>
                                         </div>
                                         <input id = "id_usuario" type = "hidden" value = "<?php echo $_SESSION['usuario']; ?>">
                                         <h3 id = "nombre_us" class="profile-username text-center text-success">Nombre</h3>
@@ -232,7 +247,7 @@ include_once 'Layouts/nav.php';
                                             <h3 class="card-title">Sobre mi</h3>
                                         </div>
                                         <div class="card-body" style="color:black;">
-                                            <strong><i class="fas fa-phone mr-1" style="color:rgb(11, 11, 11);"></i> Teléfono</strong>
+                                            <strong><i class="fas fa-phone mr-1" style="color:rgb(11, 11, 11);"></i>Teléfono</strong>
                                             <p id = "telefono_us" class="text-muted">+56 987654321</p>
                                             <strong><i class="fas fa-map-marker-alt mr-1"></i> Residencia</strong>
                                             <p id = "residencia_us" class="text-muted">Calle 123, 123456 Ciudad, Estado</p>
@@ -252,30 +267,104 @@ include_once 'Layouts/nav.php';
                                     </div>
                                 </div>
                             </div>
-                            <!-- Panel derecho: Datos Personales -->
+                            <!-- Panel derecho: Información -->
                             <div class="col-md-8">
                                 <div class="card">
-                                    <div class="card-header bg-green">
-                                        <h3 class="card-title text-success">Datos Personales</h3>
+                                    <div class="card-header bg-success">
+                                        <h3 class="card-title text-white">Información Personal</h3>
                                     </div>
                                     <div class="card-body">
-                                        <form id  = "form-usuario" class = "form form-horizontal">
-                                            <div class="form-group row mb-3">
-                                                <label for="Telefono" class="col-sm-2 col-form-label">Teléfono</label>
-                                                <div class="col-sm-10">
-                                                    <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
+                                        <div class="alert alert-info">
+                                            <i class="fas fa-info-circle"></i>
+                                            <strong>Instrucciones:</strong> Haz clic en el botón "Editar" del panel izquierdo para modificar tus datos personales.
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="info-box bg-light">
+                                                    <span class="info-box-icon bg-success"><i class="fas fa-phone"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-text">Teléfono</span>
+                                                        <span class="info-box-number" id="telefono_display">-</span>
+                                                    </div>
                                                 </div>
-                                            </div>   
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="info-box bg-light">
+                                                    <span class="info-box-icon bg-info"><i class="fas fa-envelope"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-text">Correo</span>
+                                                        <span class="info-box-number" id="correo_display">-</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="info-box bg-light">
+                                                    <span class="info-box-icon bg-warning"><i class="fas fa-map-marker-alt"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-text">Residencia</span>
+                                                        <span class="info-box-number" id="residencia_display">-</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="info-box bg-light">
+                                                    <span class="info-box-icon bg-danger"><i class="fas fa-venus-mars"></i></span>
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-text">Sexo</span>
+                                                        <span class="info-box-number" id="sexo_display">-</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Modal para editar datos -->
+                        <div class="modal fade" id="modal-editar" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-success">
+                                        <h4 class="modal-title text-white">Editar Datos Personales</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="form-usuario" class="form form-horizontal" enctype="multipart/form-data">
+                                            <!-- Campo para imagen de perfil -->
                                             <div class="form-group row mb-3">
-                                                <label for="Residencia" class="col-sm-2 col-form-label">Residencia</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="residencia" placeholder="Residencia">
+                                                <label class="col-sm-3 col-form-label">Imagen de Perfil</label>
+                                                <div class="col-sm-9">
+                                                    <div class="text-center mb-3">
+                                                        <img id="preview-imagen" src="<?php echo htmlspecialchars($imagen_perfil); ?>" class="img-thumbnail rounded-circle" style="width: 100px; height: 100px; object-fit: cover;" alt="Preview">
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+                                                        <small class="form-text text-muted">Formatos permitidos: JPG, PNG, GIF. Tamaño máximo: 2MB</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="form-group row mb-3">
+                                                <label for="telefono" class="col-sm-3 col-form-label">Teléfono</label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control" id="telefono" placeholder="Teléfono" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-3">
-                                                <label for="Sexo" class="col-sm-2 col-form-label">Sexo</label>
-                                                <div class="col-sm-10">
-                                                    <select class="form-control" id="sexo">
+                                                <label for="residencia" class="col-sm-3 col-form-label">Residencia</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" id="residencia" placeholder="Residencia" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="sexo" class="col-sm-3 col-form-label">Sexo</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" id="sexo" required>
                                                         <option value="Masculino">Masculino</option>
                                                         <option value="Femenino">Femenino</option>
                                                         <option value="Otro">Otro</option>
@@ -283,30 +372,26 @@ include_once 'Layouts/nav.php';
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-3">
-                                                <label for="Correo" class="col-sm-2 col-form-label">Correo</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="correo" placeholder="Correo">
+                                                <label for="correo" class="col-sm-3 col-form-label">Correo</label>
+                                                <div class="col-sm-9">
+                                                    <input type="email" class="form-control" id="correo" placeholder="Correo" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-3">
-                                                <label for="adicional" class="col-sm-2 col-form-label">Información Adicional</label>
-                                                <div class="col-sm-10">
-                                                    <textarea class="form-control" id="adicional" rows="3"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class= "form-group row mb-3">
-                                                <div class="offset-sm-2 col-sm-10 float-right">
-                                                <button class="btn btn-block btn-outline-success">Guardar</button>
-                                                <button type="reset" class="btn btn-block btn-outline-danger">Cancelar</button>
+                                                <label for="adicional" class="col-sm-3 col-form-label">Información Adicional</label>
+                                                <div class="col-sm-9">
+                                                    <textarea class="form-control" id="adicional" rows="3" placeholder="Información adicional..."></textarea>
                                                 </div>
                                             </div>
                                         </form>
-                                        <div class = "card-footer">
-                                            <p class="text-muted">Tenga cuidado con ingresar datos incorrectos..</p>
-                                        </div>
-                                        </form>
-                                       
-                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" form="form-usuario" class="btn btn-success">
+                                            <i class="fas fa-save"></i> Guardar
+                                        </button>
+                                        <button type="button" id="cancelar" class="btn btn-danger">
+                                            <i class="fas fa-times"></i> Cancelar
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -18,20 +18,32 @@ class Usuario{
     }
 
     function obtener_datos($id){
-        $sql = "SELECT * FROM usuario INNER JOIN tipo_us ON us_tipo = id_tipo_us and id_usuario = :id";
+        $sql = "SELECT * FROM usuario INNER JOIN tipo_us ON us_tipo = id_tipo_us WHERE id_usuario = :id";
         $query = $this->acceso->prepare($sql);
         $query->execute(array(':id' => $id));
         $this->objetos = $query->fetchAll();
     }
-    function editar($id_usuario, $telefono, $residencia, $sexo, $adicional, $correo) {
+    function editar($id_usuario, $telefono, $residencia, $sexo, $adicional, $correo, $imagen_perfil = null) {
         try {
-            $sql = "UPDATE usuario SET 
-                    telefono_us = :telefono,
-                    residencia_us = :residencia,
-                    sexo_us = :sexo,
-                    adicional_us = :adicional,
-                    correo_us = :correo
-                    WHERE id_usuario = :id_usuario";
+            // Construir la consulta dinámicamente dependiendo si hay imagen o no
+            if ($imagen_perfil !== null) {
+                $sql = "UPDATE usuario SET
+                        telefono_us = :telefono,
+                        residencia_us = :residencia,
+                        sexo_us = :sexo,
+                        adicional_us = :adicional,
+                        correo_us = :correo,
+                        imagen_perfil = :imagen_perfil
+                        WHERE id_usuario = :id_usuario";
+            } else {
+                $sql = "UPDATE usuario SET
+                        telefono_us = :telefono,
+                        residencia_us = :residencia,
+                        sexo_us = :sexo,
+                        adicional_us = :adicional,
+                        correo_us = :correo
+                        WHERE id_usuario = :id_usuario";
+            }
             
             $query = $this->acceso->prepare($sql);
             $query->bindParam(':telefono', $telefono, PDO::PARAM_STR);
@@ -40,6 +52,10 @@ class Usuario{
             $query->bindParam(':adicional', $adicional, PDO::PARAM_STR);
             $query->bindParam(':correo', $correo, PDO::PARAM_STR);
             $query->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
+            
+            if ($imagen_perfil !== null) {
+                $query->bindParam(':imagen_perfil', $imagen_perfil, PDO::PARAM_STR);
+            }
             
             // Ejecutar la consulta y verificar el resultado
             if($query->execute()) {
