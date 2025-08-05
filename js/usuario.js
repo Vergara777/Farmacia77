@@ -1,3 +1,4 @@
+//Hola sjsjjsjs
 $(document).ready(function() {
     console.log('JS cargado');
     let funcion = '';
