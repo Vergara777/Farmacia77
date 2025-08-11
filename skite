@@ -1,3 +1,39 @@
+## Historial de cambios — Proyecto Farmacia
+
+Este archivo resume los cambios más relevantes del repositorio en orden cronológico (reciente → antiguo). Se han eliminado códigos de color para mejorar la legibilidad y se han abreviado los hashes de commit.
+
+### Últimos cambios
+- 2025-07-28 — Modificación de nombre de la Farmacia y cambio de imágenes. (commit 2aad0aa)
+- 2025-07-28 — "brrr". (commit c06f435)
+- 2025-07-27 — Mejoras en edición de datos personales. (commit a507878)
+- 2025-07-27 — Cambios regulares. (commit 6d3ca75)
+- 2025-07-26 — Actualización menor. (commit 706f044)
+- 2025-07-25 — Merge PR #1 desde rama `elias`: Cambios de Elías. (merge 8464e1a)
+- 2025-07-25 — Cambios de Elías. (commit cd47939)
+- 2025-07-25 — Corrección de error: no se recibían datos. (commit 20eb288)
+- 2025-07-24 — Mostrar datos del usuario. (commit 9250fd6)
+- 2025-07-22 — Avances iniciales. (commit 03056c4)
+- 2025-07-20 — Pequeños cambios. (commit ccbfea3)
+- 2025-07-20 — Pequeños cambios. (commit 2be36bd)
+- 2025-07-18 — Nuevos cambios iniciales. (commit e784da7)
+- 2025-07-18 — Primer commit: inicio del proyecto. (commit 03c4cc6)
+
+### Recomendación de formato para futuros cambios
+Para mantener este archivo útil y consistente, agrega entradas con este formato:
+
+- AAAA-MM-DD — Descripción breve y orientada al usuario. (commit abcdef1)
+  - Si aplica, agrega subpuntos con detalles: vistas afectadas, controladores, scripts o migraciones
+
+Ejemplo:
+- 2025-08-01 — Catálogo técnico: paginación y filtros por categoría. (commit 123abcd)
+  - Vista: `vista/tec_catalogo.php`
+  - JS: `js/usuario.js`
+  - Fix: manejo de errores en `modelo/Usuario.php`
+
+### Notas
+- Este archivo no reemplaza la historia completa de Git; sirve como resumen legible para el equipo.
+- Considera crear etiquetas (tags) semánticas en Git para versiones futuras: v0.1.0, v0.2.0, etc.
+
 [33mcommit 2aad0aab2c502d39e95266703ff290175d208fdf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
 Author: Luis <vergaraoluise@gmail.com>
 Date:   Mon Jul 28 08:27:14 2025 -0500
