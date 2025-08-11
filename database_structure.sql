@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS `tipo_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Insertar tipos de usuario básicos
-INSERT INTO `tipo_us` (`id_tipo_us`, `nombre_tipo`, `descripcion`) VALUES
++
+-*INSERT INTO `tipo_us` (`id_tipo_us`, `nombre_tipo`, `descripcion`) VALUES
 (1, 'Administrador', 'Usuario con permisos completos del sistema'),
 (2, 'Técnico', 'Usuario técnico con permisos limitados'),
 (3, 'Usuario', 'Usuario básico del sistema');
